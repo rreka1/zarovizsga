@@ -1,4 +1,4 @@
-/*package hu.nive.ujratervezes.zarovizsga.dogtypes;
+package hu.nive.ujratervezes.zarovizsga.dogtypes;
 
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,9 +19,9 @@ public class DogTypesTest {
     void init() throws SQLException {
         MariaDbDataSource dataSource;
         dataSource = new MariaDbDataSource();
-        dataSource.setUrl("jdbc:mariadb://localhost:3306/employees?useUnicode=true");
-        dataSource.setUser("employees");
-        dataSource.setPassword("employees");
+        dataSource.setUrl("jdbc:mariadb://localhost:3306/dogtypes?useUnicode=true");
+        dataSource.setUser("dogtypes");
+        dataSource.setPassword("dogtypes");
 
         Flyway flyway = Flyway.configure().dataSource(dataSource).load();
 
@@ -40,4 +40,4 @@ public class DogTypesTest {
         assertTrue(types.contains("kuvasz"));
     }
 
-}*/
+}
