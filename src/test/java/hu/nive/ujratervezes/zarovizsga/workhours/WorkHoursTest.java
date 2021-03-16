@@ -1,8 +1,8 @@
-/*package hu.nive.ujratervezes.zarovizsga.workhours;
+package hu.nive.ujratervezes.zarovizsga.workhours;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class WorkHoursTest {
 
@@ -12,4 +12,4 @@ class WorkHoursTest {
         String result = workHours.minWork("src/test/resources/hu/nive/ujratervezes/zarovizsga/workhours/workhours.txt");
         assertEquals("John Doe: 2021-01-04", result);
     }
-}*/
+}
