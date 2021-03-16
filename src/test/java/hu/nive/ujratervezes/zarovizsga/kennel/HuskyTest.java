@@ -1,4 +1,4 @@
-/*package hu.nive.ujratervezes.zarovizsga.kennel;
+package hu.nive.ujratervezes.zarovizsga.kennel;
 
 import org.junit.jupiter.api.Test;
 
@@ -26,4 +26,4 @@ public class HuskyTest {
         husky.play(4);
         assertEquals(12, husky.getHappiness());
     }
-}*/
+}
