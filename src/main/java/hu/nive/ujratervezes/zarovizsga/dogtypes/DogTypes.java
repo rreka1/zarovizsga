@@ -19,10 +19,9 @@ public class DogTypes {
     public List<String> getDogsByCountry(String country) {
         try (
                 Connection conn = dataSource.getConnection();
-                PreparedStatement stmt = conn.prepareStatement("SELECT name FROM dog_types WHERE country = ? ORDER BY name")
+                PreparedStatement stmt = conn.prepareStatement("SELECT lower(NAME) as name FROM dog_types WHERE lower(country) = lower(?) ORDER BY NAME")
         ) {
-            stmt.setString(1, country.toUpperCase());
-            stmt.executeUpdate();
+            stmt.setString(1, country);
             return selectDogNamesByPreparedStatement(stmt);
         } catch (SQLException sqle) {
             throw new IllegalStateException("Cannot select!", sqle);
@@ -34,7 +33,7 @@ public class DogTypes {
             List<String> names = new ArrayList<>();
             while (rs.next()) {
                 String name = rs.getString("name");
-                names.add(name.toLowerCase());
+                names.add(name);
             }
             return names;
         } catch (SQLException sqle) {
